@@ -1,0 +1,236 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>투어메이트</title>
+      <script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+      <style>
+      #content {
+         width:27%;
+         height:310px;
+         float:left;
+         border:0.2px solid gray;
+         background-color: #F2F2F2;
+         margin: 2% 3% 2% 3%;
+      }
+      #box {
+         width:100%;
+         height:220px;
+      }
+      #name {
+         font-size:18px;
+         text-align:left;
+         color:black;
+      }
+      #price {
+         font-size:24px;
+         text-align:right;
+         color:black;
+         font-weight: bold;
+      }
+      
+      .mainbox { padding-left:15%; }
+      
+      #bgimg {
+         width:1010px;
+         height:450px;
+         margin-right: 15%;
+         margin-bottom: 3%;
+      }
+      
+      .whitebox {
+         position: absolute;
+         top: 280px;
+         left: 275px;
+         background: white;
+         height: 370px;
+         width: 380px;
+      }
+      
+      .input { 
+         margin-left: 3%; 
+         float: left;
+         width:49%
+      }
+      
+      .input2 {  
+         float: left;
+         width:44%
+      }
+      
+      .input3 { 
+      margin-left: 4%; 
+      margin-right: 5px; 
+         float: left;
+         width:27%
+      } 
+       
+      .text {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         float: left;
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+      
+      .input_checkin {
+         margin: 3% 3% 3% 3%;
+         float: left;
+         width: 44%;
+      }
+      
+      .input_checkout {
+         margin: 3% 0% 3% 3%;
+         float: left;
+         width: 44%;
+      }
+      
+      .check {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 88%;
+         margin-top: 5px;
+         margin-bottom: 5px;    
+      }
+      
+      .check2 {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 97%;
+         margin-top: 5px;
+         margin-bottom: 5px;    
+      }
+      
+      .check3 {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         margin-top: 5px;
+         margin-bottom: 5px;      
+      }
+         
+      .bottom {
+         float: left;
+         background: #eee;
+         height: 115px;
+         margin-top:20px;
+         width: 100%;
+      }
+            
+      button.reset {
+         margin-top: 4%;
+         margin-left: 32%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #808781;
+         color: white;
+      }
+      
+      input.submit{
+         margin-top: 4%;
+         margin-left: 2%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #60C26C;
+         color: white;         
+      }
+      </style>
+   </head>
+   <body>
+    <!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+ 	<jsp:include page="Header.jsp" flush="false"/>
+   <div class="mainbox">
+   <p><h2>최저가 항공권 검색</h2></p>
+   <img id="bgimg" src="4_flight/비행기날개.jpg">   
+   </div>
+   
+   <!-- 달력 만들기 -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+   <script>
+     $( function() {
+       $("#datepicker1, #datepicker2").datepicker({
+          dateFormat: 'yy년 mm월 dd일'
+       });
+     } );
+     </script>   
+   
+   <div class="whitebox">
+   <form action="항공_result" method="post">
+        <br>
+      <div class="input">
+      <b><font size=3>출발지</font></b>
+      <input class="check" type="text" name="start" placeholder="인천국제공항(ICN)" >⟷
+      </div>
+      
+      <div class="input2">
+      <b><font size=3>도착지</font></b>
+      <input class="check2" type="text" name="end" placeholder="홍콩인터내셔널(HKG)" >
+      </div>
+
+      <div class="input_checkin">
+      <b><font size=3>체크인</font></b><br>
+      <input class="check3" id="datepicker1" type="text" name="checkin" placeholder="날짜 선택" >
+      </div>
+      
+      <div class="input_checkout">
+      <b><font size=3>체크아웃</font></b><br>
+      <input class="check3" id="datepicker2" type="text" name="checkout" placeholder="날짜 선택" >
+      </div>
+        
+      <div class="input3">
+      <b><font size=3>인원</font></b>
+      <select class="text" name="adult">
+         <option value="1">성인1명</option>
+         <option value="2">성인2명</option>
+         <option value="3">성인3명</option>
+         <option value="4">성인4명</option>
+         <option value="5">성인5명</option>
+      </select>
+      </div>
+      <div class="input3">
+      <br>
+      <select class="text" name="kid">
+         <option value="1">아동0명</option>
+         <option value="2">아동1명</option>
+         <option value="3">아동2명</option>
+         <option value="4">아동3명</option>
+         <option value="5">아동4명</option>
+      </select>
+      </div>
+      <div class="input3">
+      <br>
+      <select class="text" name="baby">
+         <option value="1">유아0명</option>
+         <option value="2">유아1명</option>
+         <option value="3">유아2명</option>
+         <option value="4">유아3명</option>
+         <option value="5">유아4명</option>
+      </select>
+      </div>
+    
+      <div class="bottom">
+      <button type="reset" class="reset">초기화</button>
+      <input type="submit" value="검색" class="submit">
+      </div>
+   </form>
+   <br>
+   <b><font size="3" color="white">*왕복 기준</font></b>
+   </div>
+	<!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+	<jsp:include page="Footer.jsp" flush="false"/>
+   </body>
+</html>

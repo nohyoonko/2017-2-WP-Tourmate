@@ -1,0 +1,130 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>투어메이트</title>
+      <script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+      <style>
+      .mainbox { padding-left:15%; }
+      
+      .whitebox {
+         position:absolute;
+         top:280px;
+         left:275px;
+         height:370px;
+         width:900px;
+      }
+      
+   	  #flightbox {
+   	  	 width:100%;
+   	  	 height:40px;
+   	  	 background:white;
+   	  }
+   	  
+   	  #flightbox2 {
+   	  	float:left;
+   	  	 width:65%;
+   	  	 height:180px;
+   	  	 padding-right:20.5px;
+   	  	 background:white;
+   	  	 opacity:0.9;
+   	  }
+   	  
+   	  #flightbox3 {
+   	  	 float:right;
+   	  	 width:32.7%;
+   	  	 height:180px;
+   	  	 background:white;
+   	  	 opacity:0.9;
+   	  }
+   	  
+   	  #flightbox4 {
+   	  	 width:880px;
+   	  	 height:130px;
+   	  	 margin-top:200px;
+   	  	 padding-right:20px;
+   	  	 background:white;
+   	  	 opacity:0.9;
+   	  }
+   	  
+   	  #num {
+   	  	width:90%;
+   	  	height:160px;
+   	  	float:left;
+   	  	margin: 10px 5px 8px 0px;
+   	  	border:1px solid black;
+   	  }
+   	  
+      #bgimg {
+         width:1010px;
+         height:450px;
+         margin-right: 15%;
+         margin-bottom: 3%;
+      }
+      
+      #humanimg {
+      	width:70%;
+      	margin-left:14%;
+      	height:90px;
+      }
+      
+      #size {
+      	width:40px;
+      	height:40px;
+      	margin-left:8px;
+      	margin-right:8px;
+      	float:left;
+      }
+      
+      a:link {text-decoration: underline; color: black;}
+	  a:visited {text-decoration: none; color: black;}
+	  a:hover {text-decoration: underline; color: #FF8000;}
+      </style>
+   </head>
+   <body>
+    <!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+ 	<jsp:include page="Header.jsp" flush="false"/>
+    <div class="mainbox">
+    <p><h2>최저가 항공권 검색</h2></p>
+    <img id="bgimg" src="5_hotel/호텔예약.jpg">   
+    </div>
+   	<% 
+   		String country=request.getParameter("country");
+   		String checkin=request.getParameter("checkin");
+   		String checkout=request.getParameter("checkout");
+   		String people=request.getParameter("people");
+   		
+   		int a=Integer.parseInt(people);
+   	%>
+   	
+   	<div class="whitebox">
+   		<div id="flightbox">
+   		<b><img id="size" src="5_hotel/호텔아이콘.jpg"><font size="5">항공편</font></b>
+   		</div>
+   		<div id="flightbox2"> 
+   			<p><h2>&nbsp;&nbsp;여행지 : <%= country%></h2></p>
+   			<p><h2>&nbsp;&nbsp;기간 : <%= checkin%> ~ <%= checkout%></h2></p>
+   		</div>
+   		<div id="flightbox3"> 
+   			<font size="4">
+   			<div id="num">
+   				<img id="humanimg" src="5_hotel/사람.jpg">
+   				<center>총 <%= a%>명</center>
+   			</div>
+   			</font>
+   		</div>
+   		<div id="flightbox4">
+   			<p><h2>&nbsp;&nbsp;최저가 : 73,845원</h2></p>
+   			<h4>&nbsp;&nbsp;<a href = "항공_ok.jsp">힐튼호텔 : 1박 73,845원</a></h4>
+   			<h4>&nbsp;&nbsp;<a href = "항공_ok.jsp">쉐라톤 : 1박 83,260원</a></h4>
+   		</div>
+   	</div>
+	<!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+	<jsp:include page="Footer.jsp" flush="false"/>
+   </body>
+</html>

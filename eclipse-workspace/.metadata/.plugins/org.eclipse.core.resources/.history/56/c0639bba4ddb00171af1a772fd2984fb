@@ -1,0 +1,122 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>투어메이트</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+		<style>
+		#content {
+			width:27%;
+			height:310px;
+			float:left;
+			border:0.2px solid gray;
+			background-color: #F2F2F2;
+			margin: 2% 3% 2% 3%;
+		}
+		#box {
+			width:100%;
+			height:220px;
+		}
+		#name {
+			font-size:18px;
+			text-align:left;
+			color:black;
+		}
+		#price {
+			font-size:24px;
+			text-align:right;
+			color:black;
+			font-weight: bold;
+		}
+		</style>
+	</head>
+	<body>
+		<!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+ 		<jsp:include page="Header.jsp" flush="false"/>
+
+		<br><br>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/63빌딩.jpg">
+			<img id="box" src="3_korea/63빌딩2.jpg">
+			<img id="box" src="3_korea/63빌딩3.jpg">
+			</marquee>
+			<div id="name"> 63빌딩 아쿠아리움 + 전망대 </div><br>
+			<div id="price"> 31,000원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/카멜리아힐.jpg">
+			<img id="box" src="3_korea/카멜리아힐2.jpg">
+			<img id="box" src="3_korea/카멜리아힐3.jpg">
+			</marquee>
+			<div id="name">[방송촬영인기관광지] 카멜리아힐</div><br>
+			<div id="price"> 6,500원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/퍼시픽랜드.jpg">
+			<img id="box" src="3_korea/퍼시픽랜드2.jpg">
+			</marquee>
+			<div id="name"> 퍼시픽랜드 </div><br>
+			<div id="price"> 9,000원 </div>
+		</div>
+		<br>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/레일바이크.jpg">
+			<img id="box" src="3_korea/레일바이크2.jpg">
+			</marquee>
+			<div id="name">레일바이크</div><br>
+			<div id="price"> 9,800원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/넥슨컴퓨터박물관.jpg">
+			<img id="box" src="3_korea/넥슨컴퓨터박물관2.jpg">
+			<img id="box" src="3_korea/넥슨컴퓨터박물관3.jpg">
+			</marquee>
+			<div id="name">넥슨컴퓨터박물관</div><br>
+			<div id="price"> 7,500원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/남산타워.jpg">
+			<img id="box" src="3_korea/남산타워2.jpg">
+			<img id="box" src="3_korea/남산타워3.jpg">
+			</marquee>
+			<div id="name"> [방송촬영인기관광지] 남산타워 케이블카 </div><br>
+			<div id="price"> 8,000원 </div>
+		</div>
+		<br>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/김녕미로공원.gif">
+			<img id="box" src="3_korea/김녕미로공원2.gif">
+			</marquee>
+			<div id="name">[방송촬영인기관광지] 김녕미로공원</div><br>
+			<div id="price"> 3,000원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/마라도여객선.jpg">
+			<img id="box" src="3_korea/마라도여객선2.jpg">
+			<img id="box" src="3_korea/마라도여객선3.JPG">
+			</marquee>
+			<div id="name">마라도 여객선</div><br>
+			<div id="price"> 16,000원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/테디베어뮤지엄.jpg">
+			<img id="box" src="3_korea/테디베어뮤지엄2.dib">
+			<img id="box" src="3_korea/테디베어뮤지엄3.jpg">
+			</marquee>
+			<div id="name"> [방송촬영인기관광지] 테디베어뮤지엄 </div><br>
+			<div id="price">9,200원 </div>
+		</div>
+		<!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+		<jsp:include page="Footer.jsp" flush="false"/>
+	</body>
+</html>

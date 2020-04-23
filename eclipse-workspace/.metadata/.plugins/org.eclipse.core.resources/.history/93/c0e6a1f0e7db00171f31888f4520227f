@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+		#content {
+			width:80%;
+			height:950px;
+			margin: 0% 2% 2% 9%;
+			float:center;
+		}
+		#box {
+			width:100%;
+			height:100%;
+		}
+		
+		div { font-family: "함초롬돋움"; }
+      
+      #map { margin-top: 20px; margin-bottom: 20px;}
+      #korea_name {
+         position: absolute;
+         top: 508px;
+         left: 980px;
+         width: auto; 
+         color: #984807; 
+      }
+      #korea_info {
+         display: none;
+         position: absolute;
+         top: 520px;
+         left: 1040px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #japan_name { 
+         position: absolute;
+         top: 500px;
+         left: 1060px;
+         width: auto; 
+         color: #984807; 
+      }
+      #japan_info {
+         display: none;
+         position: absolute;
+         top: 300px;
+         left: 1110px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #taiwan_name { 
+         position: absolute;
+         top: 620px;
+         left: 970px;
+         width: auto; 
+         color: #984807; 
+      }
+      #taiwan_info {
+         display: none;
+         position: absolute;
+         top: 570px;
+         left: 1030px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #russia_name { 
+         position: absolute;
+         top: 300px;
+         left: 670px;
+         width: auto; 
+         color: #984807; 
+      }
+      #russia_info {
+         display: none;
+         position: absolute;
+         top: 300px;
+         left: 760px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #singapore_name { 
+         position: absolute;
+         top: 810px;
+         left: 820px;
+         width: auto; 
+         color: #984807; 
+      }
+      #singapore_info {
+         display: none;
+         position: absolute;
+         top: 680px;
+         left: 920px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #india_name { 
+         position: absolute;
+         top: 650px;
+         left: 650px;
+         width: auto; 
+         color: #984807; 
+      }
+      #india_info {
+         display: none;
+         position: absolute;
+         top: 600px;
+         left: 710px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #img { width: 90%; }

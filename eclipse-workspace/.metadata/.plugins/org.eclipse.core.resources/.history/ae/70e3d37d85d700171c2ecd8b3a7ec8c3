@@ -1,0 +1,479 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>투어메이트</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+		<style>
+		div{font-family:"함초롬돋움";}
+		div.header1{
+			width:30%;
+			float:left;
+			margin-left:25px;
+			margin-top:50px;
+		}
+		div.header2{
+			width:33%;
+			height:60px;
+			float:left;
+			color:black;
+			margin-left:40px;
+			margin-top:15px;
+		}
+		div.header2 > a {
+			color:black; text-decoration:none;
+		}
+		div.header3{
+			width:31%;
+			height:50px;
+			float:left;
+			margin-right:10px;
+			margin-top:65px;
+		}
+		div.footer{
+			width:99%;
+			height:220px;
+			float:left;
+			background-color:#FF8000;
+			color:white;
+			text-align:center;
+			padding-top:10px;
+		}
+		div.promise{
+			width:20%;
+			float:left;
+			height:140px;
+			background-color:#FF8000;
+			color:white;
+			font-size:15px;
+			text-align:center;
+			padding-top:5px;
+			padding-left:55px;
+		}
+		div.footer2{
+			width:45%;
+			height:40px;
+			float:left;
+			font-size:28px;
+			background-color:#FF8000;
+			color:white;
+			text-align:center;
+			padding-top:5px;
+			margin-left:2%;
+			margin-right:3%;
+			margin-top:40px;
+		}
+		div.footer3{
+			width:45%;
+			height:35px;
+			float:left;
+			font-size:28px;
+			text-align:center;
+			padding-top:4px;
+			margin-left:34px;
+			margin-right:34px;
+		}
+		div.footer4{
+			width:45%;
+			height:150px;
+			float:left;
+			font-size:18px;
+			text-align:center;
+			padding-top:15px;
+			margin-top:2px;
+			margin-left:34px;
+			margin-right:34px;
+			border-width: 1px;
+            border-style : dotted;
+            border-color : #FF8000;
+		}
+		div.footer5{
+			width:99%;
+			height:170px;
+			font-size:15px;
+			background-color:#424242;
+			color:white;
+			float:left;
+			text-align:center;
+			padding-top:15px;
+			margin-top:40px;
+			
+		}
+		 .menubar {
+          background: #FF8000;
+          display: inline-block;
+           width: 100%;
+      	}
+      	.main { margin: 0; padding: 0; font-size : 19px; }
+      	.main li {
+         	padding:0% 3% 0% 3%;
+           float: left;
+           list-style:none;
+           position: relative;
+      	}
+      	.main li:first-child { margin-left: 10%; }
+      	.main li:hover { background: #984807; }
+      	.main a {
+           color: white;
+           display: block;
+           padding: 10px 20px;
+           text-decoration: none;
+     	}
+      	.main ul {
+           background: white;
+           display: none;
+           padding: 0;
+           position: absolute;
+           left: 0;
+           top: 100%;
+           z-index: 2;
+           width: 200px;
+      	}
+      	.main ul li { float: none; margin-left: 10%; }
+      	.main ul a { color: #984807; }
+     	.main ul li:hover { background: white; }
+     	.main ul li:hover>a { color: #FF8000; }
+
+		#content {
+			width:27%;
+			height:310px;
+			float:left;
+			border:0.2px solid gray;
+			background-color: #F2F2F2;
+			margin: 2% 3% 2% 3%;
+		}
+		#box {
+			width:100%;
+			height:220px;
+		}
+		#name {
+			font-size:18px;
+			text-align:left;
+			color:black;
+		}
+		#price {
+			font-size:24px;
+			text-align:right;
+			color:black;
+			font-weight: bold;
+		}
+		#fo{width:60px; height:60px; padding:10px 70px 5px 70px;}
+		
+      .mainbox { padding-left:15%; }
+      
+      #bgimg {
+         width:1010px;
+         height:450px;
+         margin-right: 15%;
+         margin-bottom: 3%;
+      }
+      
+      .whitebox {
+         position: absolute;
+         top: 280px;
+         left: 275px;
+         background: white;
+         height: 370px;
+         width: 380px;
+      }
+      
+      .input { 
+      	margin-left: 3%; 
+      	float: left;
+      	width:49%
+      }
+      
+      .input2 {  
+      	float: left;
+      	width:44%
+      }
+      
+      .input3 { 
+		margin-left: 4%; 
+		margin-right: 5px; 
+      	float: left;
+      	width:27%
+      } 
+       
+      .text {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         float: left;
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+      
+      .input_checkin {
+         margin: 3% 3% 3% 3%;
+         float: left;
+         width: 44%;
+      }
+      
+      .input_checkout {
+         margin: 3% 0% 3% 3%;
+         float: left;
+         width: 44%;
+      }
+      
+      .check {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 88%;
+         margin-top: 5px;
+         margin-bottom: 5px;    
+      }
+      
+      .check2 {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 97%;
+         margin-top: 5px;
+         margin-bottom: 5px;    
+      }
+      
+      .check3 {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         margin-top: 5px;
+         margin-bottom: 5px;      
+      }
+         
+      .bottom {
+         margin-top:20px;
+         background: #eee;
+         align:bottom;
+         height: 115px;
+      }
+      
+      button.reset {
+         margin-top: 4%;
+         margin-left: 32%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #808781;
+         color: white;
+      }
+      
+      input.submit{
+         margin-top: 4%;
+         margin-left: 2%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #60C26C;
+         color: white;         
+      }
+		</style>
+	</head>
+	<body>
+		<div class="header1">
+			<input type="text" size=30></input>
+			<input type="submit" value="검색"></input>
+		</div>
+		<a href="투어메이트.html">
+		<div class="header2">
+			<center>
+			<font face="HYHeadLine" size="7">Tourmate</font><br>
+			<font face="함초롬돋움" size="4">믿을 수 있는 여행 친구, 투어메이트</font>
+			</center>
+		</div>
+		</a>
+		<div class="header3">
+			<center>
+			<font face="함초롬돋움" size="3">로그인 | 회원가입 | 이벤트</font>
+			</center>
+		</div>
+		<!--상단 메뉴바와 하위 메뉴-->
+    <script src="//code.jquery.com/jquery.min.js"></script>
+   <script>
+   $(function(){
+        $(".main li").hover(function(){
+          $('ul:first',this).show();
+        }, function(){
+          $('ul:first',this).hide();
+        });
+   });
+   </script>
+   
+    <div class="menubar">
+        <ul class="main">
+            <li>
+                 <a href="#">여행 정보</a>
+                 <ul>
+                  <li><a href="인기_여행_도시.jsp">인기 여행 도시</a></li>
+                  <li><a href="#">여행 준비</a></li>
+               </ul>
+            </li>
+            
+            <li>
+                <a href="#">커뮤니티</a>
+                <ul>
+                    <li><a href="#">여행 후기</a></li>
+                    <li><a href="#">맛집 추천</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#">티켓/투어</a>
+                <ul>
+                    <li><a href="티켓투어_한국.jsp">한국</a></li>
+                    <li><a href="티켓투어_홍콩.jsp">홍콩</a></li>
+                    <li><a href="티켓투어_일본.jsp">일본</a></li>
+                    <li><a href="티켓투어_싱가포르.jsp">싱가포르</a></li>
+                    <li><a href="티켓투어_대만.jsp">대만</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="항공.jsp">항공</a></li>
+            <li><a href="호텔.jsp">호텔</a></li>
+            <li><a href="렌터카.jsp">렌터카</a></li>
+        </ul>
+    </div>
+   <div class="mainbox">
+   <p><h2>최저가 항공권 검색</h2></p>
+   <img id="bgimg" src="4_flight/비행기날개.jpg">   
+   </div>
+   
+   <!-- 달력 만들기 -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+   <script>
+     $( function() {
+       $("#datepicker1, #datepicker2").datepicker({
+          dateFormat: 'yy.mm.dd'
+       });
+     } );
+     </script>   
+   
+   <div class="whitebox">
+   <form action="#" method="post">
+   	  <br>
+      <div class="input">
+      <b><font size=3>출발지</font></b>
+      <input class="check" type="text" name="country" placeholder="인천국제공항(ICN)" >⟷
+      </div>
+      
+      <div class="input2">
+      <b><font size=3>도착지</font></b>
+      <input class="check2" type="text" name="country" placeholder="홍콩인터내셔널(HKG)" >
+      </div>
+
+      <div class="input_checkin">
+      <b><font size=3>체크인</font></b><br>
+      <input class="check3" id="datepicker1" type="text" name="checkin" placeholder="날짜 선택" >
+      </div>
+      
+      <div class="input_checkout">
+      <b><font size=3>체크아웃</font></b><br>
+      <input class="check3" id="datepicker2" type="text" name="checkout" placeholder="날짜 선택" >
+      </div>
+        
+      <div class="input3">
+      <b><font size=3>인원</font></b>
+      <select class="text" name="adult">
+         <option value="1">성인1명</option>
+         <option value="2">성인2명</option>
+         <option value="3">성인3명</option>
+         <option value="4">성인4명</option>
+         <option value="5">성인5명</option>
+      </select>
+      </div>
+      <div class="input3">
+      <br>
+      <select class="text" name="kid">
+         <option value="1">아동0명</option>
+         <option value="2">아동1명</option>
+         <option value="3">아동2명</option>
+         <option value="4">아동3명</option>
+         <option value="5">아동4명</option>
+      </select>
+      </div>
+      <div class="input3">
+      <br>
+      <select class="text" name="baby">
+         <option value="1">유아0명</option>
+         <option value="2">유아1명</option>
+         <option value="3">유아2명</option>
+         <option value="4">유아3명</option>
+         <option value="5">유아4명</option>
+      </select>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br>
+      <div class="bottom">
+      <button type="reset" class="reset">초기화</button>
+      <input type="submit" value="검색" class="submit">
+      </div>
+   </form>
+   </div>
+   
+		<div class="footer">
+			<font size="6">여행자분들에게 약속드립니다.</font><br>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림1.png"><br>
+				수익을 위해 여행자를<br>
+				속이며, 잘못된 정보를<br>
+				추천하지 않겠습니다.
+			</div>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림2.png"><br>
+				자유여행자 분들에게<br>
+				꼭 필요한 정보만 엄선하고<br>
+				객관성을 유지하겠습니다.
+			</div>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림3.png"><br>
+				여행자분들의 제안과<br>
+				신고를 흘려버리지 않고<br>
+				서비스에 적극 반영하겠습니다.
+			</div>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림4.png"><br>
+				여행가기 전에 믿고<br>
+				방문할 수 있는 서비스를<br>
+				제공하도록 노력하겠습니다.
+			</div>
+		</div>
+		<br>
+		<div class="footer2">고객 센터</div>
+		<div class="footer2">은행 정보</div>
+		<br>
+		<div class="footer3">1688-1234</div>
+		<div class="footer3">예금주 : (주)투어메이트</div>
+		<br>
+		<div class="footer4">
+			<font color="brown" size="4">근무 시간 안내</font><br><br>
+			평일 9:00 ~ 19:00(고객센터)<br>
+			토요일 10:00 ~ 16:00(고객센터)<br>
+			점심시간 12:00 ~ 13:00<br>
+			일요일 및 공휴일은 휴무입니다.<br>
+		</div>
+		<div class="footer4"><br>
+			국민 : 12345-123456<br>
+			신한 : 123-456-789012<br>
+			하나 : 123-123456-78901<br>
+			우리 : 1234-567-890123<br>
+		</div>
+		<div class="footer5">
+			상호명 : 투어메이트 | 대표 : 이주영, 고노윤 | 대표전화 : 1688-1234<br>
+			주소 : 서울특별시 중구 필동로 1길 123 | <br>
+			사업자 등록 번호 : 123-45-67890 |<br>
+			통신판매업신고 : 제2017-1234동-5678호<br>
+			이메일 : tourmate@naver.com<br>
+			FAX : 123-4567-8901<br><br>
+			COPYRIGHT(C) ALL RIGHTS RESERVED.<br>
+		</div>
+	</body>
+</html>

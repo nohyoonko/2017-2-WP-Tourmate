@@ -1,0 +1,151 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>투어메이트</title>
+    <style>
+      .mainbox { padding-left:15%; }
+      
+      #bgimg {
+         width:1010px;
+         height:450px;
+         margin-right: 15%;
+         margin-bottom: 3%;
+      }
+      
+      .whitebox {
+         position: absolute;
+         top: 280px;
+         left: 275px;
+         background: white;
+         height: 370px;
+         width: 380px;
+      }
+      
+      .input { margin-left: 4%; }
+      
+      .text {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+      
+      .input_checkin {
+         margin: 3% 3% 3% 3%;
+         float: left;
+         width: 44%;
+      }
+      
+      .input_checkout {
+         margin: 3% 0% 3% 3%;
+         float: left;
+         width: 44%;
+      }
+      
+      .check {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         margin-top: 5px;
+         margin-bottom: 5px;      
+      }
+      
+      .bottom {
+         margin-top:20px;
+         background: #eee;
+         align:bottom;
+         height: 115px;
+      }
+      
+      button.reset {
+         margin-top: 4%;
+         margin-left: 32%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #808781;
+         color: white;
+      }
+      
+      input.submit{
+         margin-top: 4%;
+         margin-left: 2%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #60C26C;
+         color: white;         
+      }
+   </style>
+</head>
+<body>
+	<!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+ 	<jsp:include page="Header.jsp" flush="false"/>
+   
+   <div class="mainbox">
+   <p><h2>최저가 렌트카 검색</h2></p>
+      <img id="bgimg" src="6_car/자동차.jpg">   
+   </div>
+   
+   <!-- 달력 만들기 -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+   <script>
+     $( function() {
+       $("#datepicker1, #datepicker2").datepicker({
+          dateFormat: 'yy.mm.dd'
+       });
+     } );
+     </script>   
+   
+   <div class="whitebox">
+   <form action="#" method="post">
+      <div class="input">
+      <br>
+      <b><font size=3>여행지</font></b>
+      <input class="text" type="text" name="country" placeholder="나라, 도시, 지역" >
+      </div>
+
+      <div class="input_checkin">
+      <b><font size=3>대여일</font></b><br>
+      <input class="check" id="datepicker1" type="text" name="checkin" placeholder="날짜 선택" >
+      </div>
+      
+      <div class="input_checkout">
+      <b><font size=3>반납일</font></b><br>
+      <input class="check" id="datepicker2" type="text" name="checkout" placeholder="날짜 선택" >
+      </div>
+      
+      <div class="input">
+      <b><font size=3>인원</font></b>
+      <select class="text" name="people">
+         <option value="1">경차</option>
+         <option value="2">소형차</option>
+         <option value="3">중형차</option>
+         <option value="4">대형차</option>
+      </select>
+      </div>
+      <div class="bottom">
+      <button type="reset" class="reset">초기화</button>
+      <input type="submit" value="검색" class="submit">
+      </div>
+   </form>
+   <br>
+   <b><font size="3" color="white">1일 기준*</font></b>
+   </div>
+   
+	<!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+	<jsp:include page="Footer.jsp" flush="false"/>
+</body>
+</html>

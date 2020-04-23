@@ -1,0 +1,73 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>투어메이트</title>
+    <style>
+        div { font-family: "함초롬돋움"; }
+      
+      .titlebox {
+         float:left;
+         margin:3% 5% 3% 5%;
+         width:15%;
+         border-top:2px solid black;
+      }
+      
+      div.loginbox {
+         float:left;
+         border:1px solid #ddd;
+         margin: 3% 3% 3% 10%;
+         padding:0% 2% 0% 2%;
+         width:auto;
+         height:60%;
+         color: #984807;
+         font-size:30px;
+      }
+      
+      input.button_logout{
+         float:right;
+         margin: 4% 4% 4% 0%;
+         padding: 2% 3% 2% 3%;
+         width:20%;
+         height:30%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #FF8000;
+         color: white;      
+      }
+   </style>
+</head>
+<body>
+   <!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+    <jsp:include page="Header.jsp" flush="false"/>
+
+   <div class="titlebox">
+      <font size=20 style="bold">LOGIN</font><br>
+      <b>로그인</b>
+   </div>
+   <!-- 
+   //check.jsp에서 지정한 세션 속성명 id 에서 값을 가져온 다음 값이 존재하지 않으면 logout.jsp로 넘어감
+    if (session.getAttribute("id") == null) {
+        response.sendRedirect("Logout.jsp");
+    }
+    -->
+   <div class="loginbox">
+   <center>
+   <!-- 값이 존재한다면 그 값을 출력한다 -->
+   <p><b><font color="#FF8000"><%= session.getAttribute("id") %></font></b><small>님 반갑습니다.</small></p>
+   <p>당신의 여행 친구, 투어메이트입니다.</p>
+   </center>
+   <!-- logout.jsp로 하이퍼링크를 건 다음 클릭하면 페이지 이동 -->
+   <a href="Logout.jsp">
+      <input type="button" class="button_logout" value="로그아웃">
+   </a>
+   
+   </div>
+
+   <!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+   <jsp:include page="Footer.jsp" flush="false"/>
+</body>
+</html>

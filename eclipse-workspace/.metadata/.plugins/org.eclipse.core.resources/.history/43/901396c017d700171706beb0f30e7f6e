@@ -1,0 +1,367 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>투어메이트</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+		<style>
+		div{font-family:"함초롬돋움";}
+		div.header1{
+			width:30%;
+			float:left;
+			margin-left:25px;
+			margin-top:50px;
+		}
+		div.header2{
+			width:33%;
+			height:60px;
+			float:left;
+			color:black;
+			margin-left:40px;
+			margin-top:15px;
+		}
+		div.header2 > a {
+			color:black; text-decoration:none;
+		}
+		div.header3{
+			width:31%;
+			height:50px;
+			float:left;
+			margin-right:10px;
+			margin-top:65px;
+		}
+		div.footer{
+			width:99%;
+			height:220px;
+			float:left;
+			background-color:#FF8000;
+			color:white;
+			text-align:center;
+			padding-top:10px;
+		}
+		div.promise{
+			width:20%;
+			float:left;
+			height:140px;
+			background-color:#FF8000;
+			color:white;
+			font-size:15px;
+			text-align:center;
+			padding-top:5px;
+			padding-left:55px;
+		}
+		div.footer2{
+			width:45%;
+			height:40px;
+			float:left;
+			font-size:28px;
+			background-color:#FF8000;
+			color:white;
+			text-align:center;
+			padding-top:5px;
+			margin-left:2%;
+			margin-right:2%;
+			margin-top:40px;
+		}
+		div.footer3{
+			width:45%;
+			height:35px;
+			float:left;
+			font-size:28px;
+			text-align:center;
+			padding-top:4px;
+			margin-left:34px;
+			margin-right:34px;
+		}
+		div.footer4{
+			width:45%;
+			height:150px;
+			float:left;
+			font-size:18px;
+			text-align:center;
+			padding-top:15px;
+			margin-top:2px;
+			margin-left:34px;
+			margin-right:34px;
+			border-width: 1px;
+            border-style : dotted;
+            border-color : #FF8000;
+		}
+		div.footer5{
+			width:99%;
+			height:170px;
+			font-size:15px;
+			background-color:#424242;
+			color:white;
+			float:left;
+			text-align:center;
+			padding-top:15px;
+			margin-top:40px;
+			
+		}
+		 .menubar {
+          background: #FF8000;
+          display: inline-block;
+           width: 100%;
+      	}
+      	.main { margin: 0; padding: 0; font-size : 19px; }
+      	.main li {
+         	padding:0% 3% 0% 3%;
+           float: left;
+           list-style:none;
+           position: relative;
+      	}
+      	.main li:first-child { margin-left: 10%; }
+      	.main li:hover { background: #984807; }
+      	.main a {
+           color: white;
+           display: block;
+           padding: 10px 20px;
+           text-decoration: none;
+     	}
+      	.main ul {
+           background: white;
+           display: none;
+           padding: 0;
+           position: absolute;
+           left: 0;
+           top: 100%;
+           z-index: 2;
+           width: 200px;
+      	}
+      	.main ul li { float: none; margin-left: 10%; }
+      	.main ul a { color: #984807; }
+     	.main ul li:hover { background: white; }
+     	.main ul li:hover>a { color: #FF8000; }
+
+		#content {
+			width:27%;
+			height:310px;
+			float:left;
+			border:0.2px solid gray;
+			background-color: #F2F2F2;
+			margin: 2% 3% 2% 3%;
+		}
+		#box {
+			width:100%;
+			height:220px;
+		}
+		#name {
+			font-size:18px;
+			text-align:left;
+			color:black;
+		}
+		#price {
+			font-size:24px;
+			text-align:right;
+			color:black;
+			font-weight: bold;
+		}
+		#fo{width:60px; height:60px; padding:10px 70px 5px 70px;}
+		</style>
+	</head>
+	<body>
+		<div class="header1">
+			<input type="text" size=30></input>
+			<input type="submit" value="검색"></input>
+		</div>
+		<a href="투어메이트.html">
+		<div class="header2">
+			<center>
+			<font face="HYHeadLine" size="7">Tourmate</font><br>
+			<font face="함초롬돋움" size="4">믿을 수 있는 여행 친구, 투어메이트</font>
+			</center>
+		</div>
+		</a>
+		<div class="header3">
+			<center>
+			<font face="함초롬돋움" size="3">로그인 | 회원가입</font>
+			</center>
+		</div>
+		<!--상단 메뉴바와 하위 메뉴-->
+    <script src="//code.jquery.com/jquery.min.js"></script>
+   <script>
+   $(function(){
+        $(".main li").hover(function(){
+          $('ul:first',this).show();
+        }, function(){
+          $('ul:first',this).hide();
+        });
+   });
+   </script>
+   
+    <div class="menubar">
+        <ul class="main">
+            <li>
+                 <a href="#">여행 정보</a>
+                 <ul>
+                  <li><a href="인기_여행_도시.jsp">인기 여행 도시</a></li>
+                  <li><a href="#">여행 준비</a></li>
+               </ul>
+            </li>
+            
+            <li>
+                <a href="#">커뮤니티</a>
+                <ul>
+                    <li><a href="#">여행 후기</a></li>
+                    <li><a href="#">맛집 추천</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#">티켓/투어</a>
+                <ul>
+                    <li><a href="티켓투어_한국.jsp">한국</a></li>
+                    <li><a href="티켓투어_홍콩.jsp">홍콩</a></li>
+                    <li><a href="티켓투어_일본.jsp">일본</a></li>
+                    <li><a href="티켓투어_싱가포르.jsp">싱가포르</a></li>
+                    <li><a href="티켓투어_대만.jsp">대만</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="#">항공</a></li>
+            <li><a href="#">호텔</a></li>
+            <li><a href="#">렌터카</a></li>
+        </ul>
+    </div>
+
+		<br><br>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/63빌딩.jpg">
+			<img id="box" src="3_korea/63빌딩2.jpg">
+			<img id="box" src="3_korea/63빌딩3.jpg">
+			</marquee>
+			<div id="name"> [도쿄] 디즈니랜드 1일권 </div><br>
+			<div id="price"> 69,300원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/카멜리아힐.jpg">
+			<img id="box" src="3_korea/카멜리아힐2.jpg">
+			<img id="box" src="3_korea/카멜리아힐3.jpg">
+			</marquee>
+			<div id="name">[도쿄] 도쿄타워 전망대 </div><br>
+			<div id="price"> 6,500원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/퍼시픽랜드.jpg">
+			<img id="box" src="3_korea/퍼시픽랜드2.jpg">
+			</marquee>
+			<div id="name"> [오사카] 우메다 스카이 빌딩 공중정원 </div><br>
+			<div id="price"> 7,260원 </div>
+		</div>
+		<br>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/레일바이크.jpg">
+			<img id="box" src="3_korea/레일바이크2.jpg">
+			</marquee>
+			<div id="name"> [교토] TOEI 교토 스튜디오 파크 </div><br>
+			<div id="price"> 19,800원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/넥슨컴퓨터박물관.jpg">
+			<img id="box" src="3_korea/넥슨컴퓨터박물관2.jpg">
+			<img id="box" src="3_korea/넥슨컴퓨터박물관3.jpg">
+			</marquee>
+			<div id="name"> [오사카] 스파월드 </div><br>
+			<div id="price"> 7,500원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/남산타워.jpg">
+			<img id="box" src="3_korea/남산타워2.jpg">
+			<img id="box" src="3_korea/남산타워3.jpg">
+			</marquee>
+			<div id="name"> [후쿠오카] 후쿠오카타워 입장권 </div><br>
+			<div id="price"> 5,100원 </div>
+		</div>
+		<br>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/김녕미로공원.gif">
+			<img id="box" src="3_korea/김녕미로공원2.gif">
+			</marquee>
+			<div id="name">[큐슈] 후쿠오카시 1일 자유승차권</div><br>
+			<div id="price"> 8,800원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/마라도여객선.jpg">
+			<img id="box" src="3_korea/마라도여객선2.jpg">
+			<img id="box" src="3_korea/마라도여객선3.JPG">
+			</marquee>
+			<div id="name"> [도쿄] 오오에도 온천 입욕권 </div><br>
+			<div id="price"> 12,180원 </div>
+		</div>
+		<div id="content">
+			<marquee behavior="alternate" scrollamount="10">
+			<img id="box" src="3_korea/테디베어뮤지엄.jpg">
+			<img id="box" src="3_korea/테디베어뮤지엄2.dib">
+			<img id="box" src="3_korea/테디베어뮤지엄3.jpg">
+			</marquee>
+			<div id="name"> [도쿄] 아쿠아 파크 시나가와 </div><br>
+			<div id="price">9,200원 </div>
+		</div>
+		<div class="footer">
+			<font size="6">여행자분들에게 약속드립니다.</font><br>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림1.png"><br>
+				수익을 위해 여행자를<br>
+				속이며, 잘못된 정보를<br>
+				추천하지 않겠습니다.
+			</div>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림2.png"><br>
+				자유여행자 분들에게<br>
+				꼭 필요한 정보만 엄선하고<br>
+				객관성을 유지하겠습니다.
+			</div>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림3.png"><br>
+				여행자분들의 제안과<br>
+				신고를 흘려버리지 않고<br>
+				서비스에 적극 반영하겠습니다.
+			</div>
+			<div class="promise">
+				<img id="fo" src="main/footer 그림4.png"><br>
+				여행가기 전에 믿고<br>
+				방문할 수 있는 서비스를<br>
+				제공하도록 노력하겠습니다.
+			</div>
+		</div>
+		<br>
+		<div class="footer2">고객 센터</div>
+		<div class="footer2">은행 정보</div>
+		<br>
+		<div class="footer3">1688-1234</div>
+		<div class="footer3">예금주 : (주)투어메이트</div>
+		<br>
+		<div class="footer4">
+			<font color="brown" size="4">근무 시간 안내</font><br><br>
+			평일 9:00 ~ 19:00(고객센터)<br>
+			토요일 10:00 ~ 16:00(고객센터)<br>
+			점심시간 12:00 ~ 13:00<br>
+			일요일 및 공휴일은 휴무입니다.<br>
+		</div>
+		<div class="footer4"><br>
+			국민 : 12345-123456<br>
+			신한 : 123-456-789012<br>
+			하나 : 123-123456-78901<br>
+			우리 : 1234-567-890123<br>
+		</div>
+		<div class="footer5">
+			상호명 : 투어메이트 | 대표 : 이주영, 고노윤 | 대표전화 : 1688-1234<br>
+			주소 : 서울특별시 중구 필동로 1길 123 | <br>
+			사업자 등록 번호 : 123-45-67890 |<br>
+			통신판매업신고 : 제2017-1234동-5678호<br>
+			이메일 : tourmate@naver.com<br>
+			FAX : 123-4567-8901<br><br>
+			COPYRIGHT(C) ALL RIGHTS RESERVED.<br>
+		</div>
+	</body>
+</html>

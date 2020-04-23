@@ -1,0 +1,92 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+ <title>투어메이트</title>
+ </head>
+ <body>
+ <%
+	Connection conn = null;
+	int total = 0;
+	
+	try {
+		Class.forName("com.mysql.jdbc.Driver"); // MySQL Driver 를 불러 들인다.
+     	String jdbcurl = "jdbc:mysql://localhost:3306/trip"; // mysql 데이터베이스명
+     	conn = DriverManager.getConnection(jdbcurl, "root", "5576"); // 데이터베이스 커넥션을 위한 정보를 인자로 넘기며 커넥션을 얻는다.
+		Statement stmt = conn.createStatement();
+
+		String sqlCount = "SELECT COUNT(*) FROM trip";
+		ResultSet rs = stmt.executeQuery(sqlCount);
+		
+		if(rs.next()){
+			total = rs.getInt(1);
+		}
+		rs.close();
+		out.print("총 게시물 : " + total + "개");
+		
+		String sqlList = "SELECT NUM, USERNAME, TITLE, TIME, HIT from trip order by NUM DESC";
+		rs = stmt.executeQuery(sqlList);
+		
+%>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr height="5"><td width="5"></td></tr>
+ <tr style="background:url('2_trip/table_mid.gif') repeat-x; text-align:left;">
+   <td width="10"><img src="2_trip/table_left.gif" width="5" height="30" /></td>
+   <td align="center" width="70">&nbsp;번호</td>
+   <td align="center" width="300">제목</td>
+   <td align="center" width="80">작성자</td>
+   <td align="center" width="164">작성일</td>
+   <td align="center" width="58">조회수</td>
+   <td align="center" width="7"><img src="2_trip/table_right.gif" width="5" height="30" /></td>
+  </tr>
+<%
+	if(total==0) {
+%>
+	 		<tr align="center" bgcolor="#FFFFFF" height="30">
+	 	   <td colspan="6">등록된 글이 없습니다.</td>
+	 	  </tr>
+<%
+	 	} else {
+	 		
+		while(rs.next()) {
+			int idx = rs.getInt(1);
+			String name = rs.getString(2);
+			String title = rs.getString(3);
+			String time = rs.getString(4);
+			int hit = rs.getInt(5);
+		
+%>
+<tr height="25" align="center">
+	<td>&nbsp;</td>
+	<td align="center"><%=idx %></td>
+	<td align="left"><%=title %></td>
+	<td align="center"><%=name %></td>
+	<td align="center"><%=time %></td>
+	<td align="center"><%=hit %></td>
+	<td>&nbsp;</td>
+</tr>
+  <tr height="1" bgcolor="#D2D2D2"><td colspan="6"></td></tr>
+<% 
+		}
+	} 
+	rs.close();
+	stmt.close();
+	conn.close();
+} catch(SQLException e) {
+	out.println( e.toString() );
+}
+%>
+ <tr height="1" bgcolor="#FF8000"><td colspan="6" width="752"></td></tr>
+ </table>
+ 
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr><td colspan="4" height="5"></td></tr>
+  <tr align="center">
+   <td><input type="button" value="글쓰기" OnClick="window.location='여행_후기_write.jsp'"></td>
+  </tr>
+</table>
+</body> 
+</html>
+

@@ -1,0 +1,261 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>투어메이트</title>
+    <style>
+        div { font-family: "함초롬돋움"; }
+
+        #best {
+            width: 30%;
+            height: 300px;
+            float: left;
+            background-color: #F2F2F2;
+            margin: 0% 1.5% 3% 1.5%;
+            cursor:pointer;
+        }
+
+        #best2 {
+            width: 35%;
+            height: 350px;
+            float: left;
+            background-color: #F2F2F2;
+            margin: 0% 7% 3% 7%;
+            cursor:pointer;
+        }
+
+        #best3 {
+            width: 35%;
+            height: 300px;
+            float: left;
+            background-color: #F2F2F2;
+            margin: 0% 7% 3% 7%;
+            cursor:pointer;
+        }
+
+        #best_korname {
+            font-size: 3;
+            text-align: left;
+            color: black;
+            font-weight: bold;
+        }
+
+        #best_engname {
+            font-size: 3;
+            text-align: left;
+            color: gray;
+        }
+
+        #best_price {
+            font-size: 3;
+            text-align: right;
+            color: gray;
+        }
+
+        #best_price2 {
+            font-size: 3;
+            text-align: right;
+            color: white;
+        }
+
+        #aus_image {
+            width: 100%;
+            height: 250px;
+        }
+
+        #box {
+            width: 100%;
+            height: 720px;
+        }
+
+        #box2 {
+            width: 100%;
+            height: 220px;
+        }
+
+        #box3 {
+            width: 40%;
+            height: 45px;
+        }
+
+        #box4 {
+            width: 30%;
+            height: 30px;
+            padding: 10px 10px 10px 10px;
+        }
+
+        #box5 {
+            width: 100%;
+            height: 230px;
+        }
+
+        #box6 {
+            width: 100%;
+            height: 55px;
+            background-color: #424242;
+            color: white;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+
+        #recommand1 {
+            width: 46.5%;
+            height: 250px;
+            padding: 10px 20px 10px 20px;
+        }
+
+        #recommand2 {
+            width: 30%;
+            height: 250px;
+            padding: 10px 20px 10px 20px;
+        }
+        
+        .cycle-slideshow { z-index: 1; }
+
+        .cycle-pager {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .cycle-pager span {
+            font-size: 50px;
+            width: 16px;
+            display: inline-block;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .cycle-pager span.cycle-pager-active { color: #FF8000; }
+        .cycle-pager > * { cursor: pointer; }
+    </style>
+</head>
+<body>
+   <!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+    <jsp:include page="Header.jsp" flush="false"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+    <div class="cycle-slideshow" cycle-slideshow data-cycle-loader="wait" data-cycle-timeout=1000>
+        <div class="cycle-pager"></div>
+        <img id="box" src="main/배경사진.png">
+        <img id="box" src="main/배경사진4.jpg">
+        <img id="box" src="main/배경사진3.jpg">
+        <img id="box" src="main/배경사진2.png">
+        <img id="box" src="main/배경사진5.jpg">
+    </div>
+    <br><br><br>
+    <a name="event">
+    <font face="함초롬돋움" size="7"> BEST DEAL </font>
+    <font face="함초롬돋움" size="5"> 추천 여행상품 정보</font>
+    <br><br>
+    <div id="best" onclick="location.href='main_img1.jsp'">
+        <img id="box2" src="main/포시즌스 호텔 서울.jpg">
+        <div id="best_korname"> 포시즌스 호텔 서울 </div>
+        <div id="best_engname"> Four Seasons Hotel Seoul </div>
+        <div id="best_price">
+            하루 <font color="red" size="5"><b>344,250</b></font>원
+        </div>
+    </div>
+    <div id="best" onclick="location.href='main_img2.jsp'">
+        <img id="box2" src="main/힐튼 괌.jpg">
+        <div id="best_korname"> 힐튼 괌 리조트&스파 </div>
+        <div id="best_engname"> Hilton Guam Resort&Spa </div>
+        <div id="best_price">
+            하루 <font color="red" size="5"><b>171,802</b></font>원
+        </div>
+    </div>
+    <div id="best" onclick="location.href='main_img3.jsp'">
+        <img id="box2" src="main/샌프란시스코 다리.jpg">
+        <div id="best_korname"> 인천 (ICN) ⇌ 샌프란시스코 (SFO) </div>
+        <div id="best_price">
+            <img id="box3" src="main/아시아나 로고.png" align="left"><br>
+            최저 <font color="red" size="5"><b>632,200</b></font>원
+        </div>
+    </div>
+    <br>
+    <div id="best" onclick="location.href='main_img4.jsp'">
+        <img id="box2" src="main/다낭.png">
+        <div id="best_korname"> 인천 (ICN) ⇌ 다낭 (DAD) </div>
+        <div id="best_price">
+            <img id="box4" src="main/티웨이 로고.png" align="left"><br>
+            최저 <font color="red" size="5"><b>368,700</b></font>원
+        </div>
+    </div>
+    <div id="best" onclick="location.href='main_img5.jsp'">
+        <img id="box2" src="main/자동차1.png">
+        <div id="best_korname"> Toyota Corolla </div>
+        <div id="best_engname"> [호주]멜버른 </div>
+        <div id="best_price">
+            하루 <font color="red" size="5"><b>36,080</b></font>원
+        </div>
+    </div>
+    <div id="best" onclick="location.href='main_img6.jsp'">
+        <img id="box2" src="main/유니버셜 재팬.jpg">
+        <div id="best_korname"> [일본] 유니버셜 스튜디오 재팬 입장권 </div>
+        <div id="best_engname"> Universal Studios Japan Ticket 1 Day Pass </div>
+        <div id="best_price">
+            ￥7,786 > <font color="red" size="5"><b> 78,200원</b></font>(￥7,786)
+        </div>
+    </div>
+    <br><br>
+    <font face="함초롬돋움" size="7"> HOT DEAL </font>
+    <font face="함초롬돋움" size="5"> 여행상품 특가&할인쿠폰</font>
+    <br><br>
+    <div id="best2" onclick="location.href='main_img7.jsp'">
+        <img id="box5" src="main/폴란드 항공.jpg">
+        <div id="best_korname"> [LOT 폴란드항공] 한국 취항 1주년 특가 판매 </div>
+        <div id="best_price">
+            남은 시간 <font color="red" size="5"><b>10일</b></font>
+        </div>
+        <div id="box6">
+            폴란드, 바르샤바, 오슬로<br>
+            <div id="best_price2">
+                <font size="5"><b> >  724,400 </b></font>
+            </div>
+        </div>
+    </div>
+    <div id="best2" onclick="location.href='main_img8.jsp'">
+        <img id="box5" src="main/마카오.jpg">
+        <div id="best_korname"> [씨트립] 마카오호텔&항공 특가할인 </div>
+        <div id="best_price">
+            남은 시간 <font color="red" size="5"><b>47일</b></font>
+        </div>
+        <div id="box6">
+            마카오<br>
+            <div id="best_price2">
+                206,793 <font size="5"><b> >  113,707 </b></font>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="best3" onclick="location.href='main_img9.jsp'">
+        <img id="box5" src="main/돈키호테.png">
+        <div id="best_korname"> 일본 돈키호테 할인쿠폰 </div>
+    </div>
+    <div id="best3" onclick="location.href='main_img10.jsp'">
+        <img id="box5" src="main/간사이 공항.png">
+        <div id="best_korname"> 간사이 국제공항 (KIX) 면세점 5% 할인쿠폰 </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <font face="함초롬돋움" size="7"> 12월 여행도시 </font>
+    <font face="함초롬돋움" size="5"> 투어메이트가 추천하는 호주 </font>
+    <div id="aus_image">
+        <img id="recommand1" src="main/호주1.jpg">
+        <img id="recommand1" src="main/호주2.png">
+    </div>
+    <br><br>
+    <div id="aus_image">
+        <img id="recommand2" src="main/호주3.jpg">
+        <img id="recommand2" src="main/호주5.jpg">
+        <img id="recommand2" src="main/호주4.jpg">
+    </div>
+    <br><br><br>
+   
+   <!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+   <jsp:include page="Footer.jsp" flush="false"/>
+</body>
+</html>

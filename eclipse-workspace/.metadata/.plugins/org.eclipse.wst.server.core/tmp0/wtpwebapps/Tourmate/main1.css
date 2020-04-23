@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+       div { font-family: "함초롬돋움"; }
+        
+      .mainbox { padding-left:15%; }
+      .imgbox {
+         height: 370px;
+         width: 450px;
+         float:left;
+         margin: 0% 0% 5% 15%;
+      }
+      
+      .whitebox {
+         background: white;
+         border:1px solid #ddd;
+         height: 370px;
+         width: 380px;
+         float:left;
+         margin: 0% 0% 5% 5%;
+      }
+      
+      #bgimg { width: 100%; height: 100%;}
+      
+      .input { margin-left: 4%; padding-bottom: 5px; }
+        
+        .input:first-child{
+           font-size: 3;
+            color: gray;
+            text-align: right;
+            margin-right:10px;
+        }
+      
+      .text {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+      
+      .bottom {
+         margin-top:20px;
+         background: #eee;
+         height: 115px;
+      }
+      
+      button.reset {
+         margin-top: 4%;
+         margin-left: 32%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #808781;
+         color: white;
+      }
+      
+      input.submit{
+         margin-top: 4%;
+         margin-left: 2%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #60C26C;
+         color: white;         
+      }
+      
+      .whitebox1 {
+         height:250px;
+         width:600px;
+         color:#984807;
+         margin-left:30%;
+      	}
+         input.button {
+            padding:1.5% 3% 2% 3%;
+            width:22%;
+            height:15%;
+            border-color:transparent;
+            font-weight:550;
+            font-size:13px;
+              background:#FF8000;
+              color:white;
+           text-align:center;
+           margin-left:38%;
+           margin-top:2%;
+         }

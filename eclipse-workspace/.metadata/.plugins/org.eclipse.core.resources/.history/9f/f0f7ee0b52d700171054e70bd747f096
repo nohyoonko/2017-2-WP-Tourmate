@@ -1,0 +1,511 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>투어메이트</title>
+    <style>
+        div { font-family: "함초롬돋움"; }
+
+        div.header1 {
+            width: 30%;
+            float: left;
+            margin-left: 25px;
+            margin-top: 50px;
+        }
+
+        div.header2 {
+            width: 33%;
+            height: 60px;
+            float: left;
+            margin-left: 40px;
+            margin-top: 15px;
+            color: black;
+        }
+        
+         div.header2 > a {
+           color:black; text-decoration:none;
+         }
+         
+        div.header3 {
+            width: 31%;
+            height: 50px;
+            float: left;
+            margin-right: 10px;
+            margin-top: 65px;
+        }
+
+      div.footer{
+         width:99%;
+         height:220px;
+         float:left;
+         background-color:#FF8000;
+         color:white;
+         text-align:center;
+         padding-top:10px;
+      }
+      div.promise{
+         width:20%;
+         float:left;
+         height:140px;
+         background-color:#FF8000;
+         color:white;
+         font-size:15px;
+         text-align:center;
+         padding-top:5px;
+         padding-left:55px;
+      }
+      div.footer2{
+         width:45%;
+         height:40px;
+         float:left;
+         font-size:28px;
+         background-color:#FF8000;
+         color:white;
+         text-align:center;
+         padding-top:5px;
+         margin-left:2%;
+         margin-right:3%;
+         margin-top:40px;
+      }
+      div.footer3{
+         width:45%;
+         height:35px;
+         float:left;
+         font-size:28px;
+         text-align:center;
+         padding-top:4px;
+         margin-left:34px;
+         margin-right:34px;
+      }
+
+	  div.footer4{
+			width:45%;
+			height:150px;
+			float:left;
+			font-size:18px;
+			text-align:center;
+			padding-top:15px;
+			margin-top:2px;
+			margin-left:34px;
+			margin-right:34px;
+			border-width: 1px;
+            border-style : dotted;
+            border-color : #FF8000;
+		}
+      
+      div.footer5{
+         width:99%;
+         height:170px;
+         font-size:15px;
+         background-color:#424242;
+         color:white;
+         float:left;
+         text-align:center;
+         padding-top:15px;
+         margin-top:40px;
+         
+      }
+       #fo{width:60px; height:60px; padding:10px 70px 5px 70px;}
+       
+       .menubar {
+          background: #FF8000;
+          display: inline-block;
+           width: 100%;
+      }
+      .main { margin: 0; padding: 0; font-size: 19px; }
+      .main li {
+         padding:0% 3% 0% 3%;
+           float: left;
+           list-style:none;
+           position: relative;
+      }
+      .main li:first-child { margin-left: 10%; }
+      .main li:hover { background: #984807; }
+      .main a {
+           color: white;
+           display: block;
+           padding: 10px 20px;
+           text-decoration: none;
+      }
+      .main ul {
+           background: white;
+           display: none;
+           padding: 0;
+           position: absolute;
+           left: 0;
+           top: 100%;
+           z-index: 2;
+           width: 200px;
+      }
+      .main ul li { float: none; margin-left: 10%; }
+      .main ul a { color: #984807; }
+      .main ul li:hover { background: white; }
+      .main ul li:hover>a { color: #FF8000; }
+      
+      #map { margin-top: 20px; }
+      #korea_name {
+         position: absolute;
+         top: 508px;
+         left: 930px;
+         width: auto; 
+         color: #984807; 
+      }
+      #korea_info {
+         display: none;
+         position: absolute;
+         top: 520px;
+         left: 990px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #japan_name { 
+         position: absolute;
+         top: 500px;
+         left: 1010px;
+         width: auto; 
+         color: #984807; 
+      }
+      #japan_info {
+         display: none;
+         position: absolute;
+         top: 300px;
+         left: 1070px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #taiwan_name { 
+         position: absolute;
+         top: 620px;
+         left: 910px;
+         width: auto; 
+         color: #984807; 
+      }
+      #taiwan_info {
+         display: none;
+         position: absolute;
+         top: 570px;
+         left: 970px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #russia_name { 
+         position: absolute;
+         top: 300px;
+         left: 610px;
+         width: auto; 
+         color: #984807; 
+      }
+      #russia_info {
+         display: none;
+         position: absolute;
+         top: 300px;
+         left: 690px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #singapore_name { 
+         position: absolute;
+         top: 810px;
+         left: 760px;
+         width: auto; 
+         color: #984807; 
+      }
+      #singapore_info {
+         display: none;
+         position: absolute;
+         top: 680px;
+         left: 860px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #india_name { 
+         position: absolute;
+         top: 650px;
+         left: 600px;
+         width: auto; 
+         color: #984807; 
+      }
+      #india_info {
+         display: none;
+         position: absolute;
+         top: 600px;
+         left: 660px;
+         padding: 0.5% 0.5% 0.5% 0.5%;
+         background-color: #984807;
+         width:280px;
+         color: white;
+      }
+      #img { width: 90%; }
+   </style>
+</head>
+<body>
+    <div class="header1">
+        <input type="text" size=30>
+        <input type="submit" value="검색">
+    </div>
+    <a href="투어메이트.html">
+    <div class="header2">
+        <center>
+            <font face="HYHeadLine" size="7">Tourmate</font><br>
+            <font face="함초롬돋움" size="4">믿을 수 있는 여행 친구, 투어메이트</font>
+        </center>
+    </div>
+    </a>
+    <div class="header3">
+        <center>
+            <font size="3">로그인 | 회원가입 | 이벤트</font>
+        </center>
+    </div>
+       
+    <!--상단 메뉴바와 하위 메뉴-->
+    <script src="//code.jquery.com/jquery.min.js"></script>
+   <script>
+   $(function(){
+        $(".main li").hover(function(){
+          $('ul:first',this).show();
+        }, function(){
+          $('ul:first',this).hide();
+        });
+   });
+   </script>
+   
+    <div class="menubar">
+        <ul class="main">
+            <li>
+                 <a href="#">여행 정보</a>
+                 <ul>
+                  <li><a href="인기_여행_도시.jsp">인기 여행 도시</a></li>
+                  <li><a href="#">여행 준비</a></li>
+               </ul>
+            </li>
+            
+            <li>
+                <a href="#">커뮤니티</a>
+                <ul>
+                    <li><a href="#">여행 후기</a></li>
+                    <li><a href="#">맛집 추천</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#">티켓/투어</a>
+                <ul>
+                    <li><a href="티켓투어_한국.jsp">한국</a></li>
+                    <li><a href="티켓투어_홍콩.jsp">홍콩</a></li>
+                    <li><a href="티켓투어_일본.jsp">일본</a></li>
+                    <li><a href="티켓투어_싱가포르.jsp">싱가포르</a></li>
+                    <li><a href="티켓투어_대만.jsp">대만</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="#">항공</a></li>
+            <li><a href="#">호텔</a></li>
+            <li><a href="#">렌터카</a></li>
+        </ul>
+    </div>
+   
+   <!-- 아시아 지도 + 여행지 정보 -->
+   <div id="map">
+   <center>
+      <img src="1_best/아시아 지도.png" width=1000px;>
+   </center>
+   </div>
+   <!-- 여행 정보 보이기&숨기기 -->
+   <script type="text/javascript">
+      //한국 여행 정보
+      function show_K() {
+         document.getElementById('korea_info').style.display='block';
+      } 
+      function hide_K() {
+         document.getElementById('korea_info').style.display='none';
+      }
+      //일본 여행 정보
+      function show_J() {
+         document.getElementById('japan_info').style.display='block';
+      } 
+      function hide_J() {
+         document.getElementById('japan_info').style.display='none';
+      }
+      //대만 여행 정보
+      function show_T() {
+         document.getElementById('taiwan_info').style.display='block';
+      } 
+      function hide_T() {
+         document.getElementById('taiwan_info').style.display='none';
+      }
+      //러시아 여행 정보
+      function show_R() {
+         document.getElementById('russia_info').style.display='block';
+      } 
+      function hide_R() {
+         document.getElementById('russia_info').style.display='none';
+      }
+      //싱가포르 여행 정보
+      function show_S() {
+         document.getElementById('singapore_info').style.display='block';
+      } 
+      function hide_S() {
+         document.getElementById('singapore_info').style.display='none';
+      }
+      //인도 여행 정보
+      function show_I() {
+         document.getElementById('india_info').style.display='block';
+      } 
+      function hide_I() {
+         document.getElementById('india_info').style.display='none';
+      }
+   </script>
+   <!-- 한국 여행 추천 도시 -->
+   <div id="korea_name" onmouseover="show_K()" onmouseout="hide_K()">
+      <h2 align="center">한국</h2>
+   </div>
+   <div id="korea_info">
+   <center>
+      <p><b><font size="4">5월 추천 여행지, 제주도 한국</font></b></p>
+      <img id="img" src="1_best/제주도_유채꽃.jpg"><br><br>
+   </center>
+   5월에 어린이날과 어버이날의 맞이하여 따뜻한 제주도를 추천한다.<br>
+   여름이 되기 전 쾌청하고 너무 덥지 않은 적당한 온도로 여행하기 딱 좋다.<br>
+   5월 초순에는 노랗게 만개한 유채꽃도 볼 수 있다.
+   </div>
+   <!-- 일본 여행 추천 도시 -->   
+   <div id="japan_name" onmouseover="show_J()" onmouseout="hide_J()">
+      <h2 align="center">일본</h2>
+   </div>
+   <div id="japan_info">
+   <center>
+      <p><b><font size="4">2월 추천 여행지, 삿포로 일본</font></b></p>
+      <img id="img" src="1_best/일본_삿포로.PNG"><br><br>
+   </center>
+   세계 3대 축제, 삿포로 유키 마츠리가 열리는 삿포로.<br>
+   눈의 고장이라 불리는 삿포로 떠나자.<br>
+   <center>
+   <p><b><font size="4">3월 추천 여행지, 교토 일본</font></b></p>
+      <img id="img" src="1_best/일본_벚꽃.PNG"><br><br>
+   </center>
+   벚꽃 여행지의 일본 쿄도다.<br>
+   일본의 최성수기로 교토의 청수사, 금각사를 배경으로 펼쳐진 벚꽃 풍경은 어느 각도에서 찍어도 작품이 완성된다.<br>
+   </div>
+   <!-- 대만 여행 추천 도시 -->
+   <div id="taiwan_name" onmouseover="show_T()" onmouseout="hide_T()">
+      <h2 align="center">대만</h2>
+   </div>
+   <div id="taiwan_info">
+   <center>
+      <p><b><font size="4">11월 추천 여행지, 타이베이 대만</font></b></p>
+      <img id="img" src="1_best/대만_타이베이.PNG"><br><br>
+   </center>
+   대만 여행은 여름을 빗겨 난 계절이면 언제든 좋다.<br>
+   대만의 11월은 한국의 9월 중순과 같은 선선한 날씨여서 걸어서 이곳저곳 여행하기에 좋다.<br>
+   여름에 비해 강수량이 적어 비 걱정 또한 줄일 수 있다.<br>
+   </div>
+   <!-- 러시아 여행 추천 도시 -->
+   <div id="russia_name" onmouseover="show_R()" onmouseout="hide_R()">
+      <h2 align="center">러시아</h2>
+   </div>
+   <div id="russia_info">
+   <center>
+      <p><b><font size="4">8월 추천 여행지, 블라디보스톡<br>러시아</font></b></p>
+      <img id="img" src="1_best/러시아_블라디보스톡.JPG"><br><br>
+   </center>
+   시베리아 횡단열차의 시작과 끝으로 요즘 뜨는 여행지.<br>
+   8월의 블라디보스톡은 우리나라의 초가을처럼 선선한 날씨로 여행하기 좋다.<br>
+   </div>
+   <!-- 싱가포르 여행 추천 도시 -->
+   <div id="singapore_name" onmouseover="show_S()" onmouseout="hide_S()">
+      <h2 align="center">싱가포르</h2>
+   </div>
+   <div id="singapore_info">
+   <center>
+      <p><b><font size="4">6월 추천 여행지, 싱가포르</font></b></p>
+      <img id="img" src="1_best/싱가포르.jpg"><br><br>
+   </center>
+   싱가포르는 일 년 내내 덥다.<br>
+   더위를 피할 수 없으니 여행 시 고려해야 할 것은 강수량이다.<br>
+   비가 특히 많이 오는 겨울, 12월과 1월은 제외하는 것이 좋다.<br>
+   </div>
+   <!-- 인도 여행 추천 도시 -->
+   <div id="india_name" onmouseover="show_I()" onmouseout="hide_I()">
+      <h2 align="center">인도</h2>
+   </div>
+   <div id="india_info">
+   <center>
+      <p><b><font size="4">12월 추천 여행지, 인도</font></b></p>
+      <img id="img" src="1_best/인도_타지마할.jpg"><br><br>
+   </center>
+   건기인 12월부터 3월까지가 인도를 여행하기 가장 좋은 시기.<br>
+   우리나라의 초가을 날씨처럼 시원해 여행하기 쾌적하다.<br>
+   만약, 히말라야 트레킹을 원한다며 3월~10월을 추천한다.<br>
+   그리고 인도의 봄은 일년 중 가장 뜨거우니 피할 수 있으면 피하자.<br>
+   </div>
+   
+      <div class="footer">
+         <font size="6">여행자분들에게 약속드립니다.</font><br>
+         <div class="promise">
+            <img id="fo" src="main/footer 그림1.png"><br>
+            수익을 위해 여행자를<br>
+            속이며, 잘못된 정보를<br>
+            추천하지 않겠습니다.
+         </div>
+         <div class="promise">
+            <img id="fo" src="main/footer 그림2.png"><br>
+            자유여행자 분들에게<br>
+            꼭 필요한 정보만 엄선하고<br>
+            객관성을 유지하겠습니다.
+         </div>
+         <div class="promise">
+            <img id="fo" src="main/footer 그림3.png"><br>
+            여행자분들의 제안과<br>
+            신고를 흘려버리지 않고<br>
+            서비스에 적극 반영하겠습니다.
+         </div>
+         <div class="promise">
+            <img id="fo" src="main/footer 그림4.png"><br>
+            여행가기 전에 믿고<br>
+            방문할 수 있는 서비스를<br>
+            제공하도록 노력하겠습니다.
+         </div>
+      </div>
+      <br>
+      <div class="footer2">고객 센터</div>
+      <div class="footer2">은행 정보</div>
+      <br>
+      <div class="footer3">1688-1234</div>
+      <div class="footer3">예금주 : (주)투어메이트</div>
+      <br>
+      <div class="footer4">
+         <font color="brown" size="4">근무 시간 안내</font><br><br>
+         평일 9:00 ~ 19:00(고객센터)<br>
+         토요일 10:00 ~ 16:00(고객센터)<br>
+         점심시간 12:00 ~ 13:00<br>
+         일요일 및 공휴일은 휴무입니다.<br>
+      </div>
+      <div class="footer4"><br>
+         국민 : 12345-123456<br>
+         신한 : 123-456-789012<br>
+         하나 : 123-123456-78901<br>
+         우리 : 1234-567-890123<br>
+      </div>
+      <div class="footer5">
+         상호명 : 투어메이트 | 대표 : 이주영, 고노윤 | 대표전화 : 1688-1234<br>
+         주소 : 서울특별시 중구 필동로 1길 123 | <br>
+         사업자 등록 번호 : 123-45-67890 |<br>
+         통신판매업신고 : 제2017-1234동-5678호<br>
+         이메일 : tourmate@naver.com<br>
+         FAX : 123-4567-8901<br><br>
+         COPYRIGHT(C) ALL RIGHTS RESERVED.<br>
+      </div>
+</body>
+</html>

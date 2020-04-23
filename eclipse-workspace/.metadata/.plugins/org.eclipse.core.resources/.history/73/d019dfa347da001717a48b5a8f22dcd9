@@ -1,0 +1,27 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>투어메이트</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+		<style>
+		#box {
+			width:70%;
+			height:100px;
+			margin-left:3%;
+		}
+		</style>
+	</head>
+	<body>
+		<!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+ 		<jsp:include page="Header.jsp" flush="false"/>
+		<br><br>
+			<center>
+			<img id="box" src="1_ready/여행_준비.png">
+			</center>
+		<br>
+		<!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+		<jsp:include page="Footer.jsp" flush="false"/>
+	</body>
+</html>

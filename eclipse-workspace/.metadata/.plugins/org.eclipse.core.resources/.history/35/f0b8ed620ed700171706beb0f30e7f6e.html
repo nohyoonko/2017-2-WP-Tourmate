@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>투어메이트</title>
+    <style>
+        div { font-family: "함초롬돋움"; }
+		
+        div.header1 {
+            width: 30%;
+            float: left;
+            margin-left: 25px;
+            margin-top: 50px;
+        }
+
+        div.header2 {
+            width: 33%;
+            height: 60px;
+            float: left;
+            font-color:black;
+            margin-left: 40px;
+            margin-top: 15px;
+        }
+
+		div.header2 > a:visited, a:link, a:hover, a:active {
+			color:black; text-decoration:none;
+		}
+        div.header3 {
+            width: 31%;
+            height: 50px;
+            float: left;
+            margin-right: 10px;
+            margin-top: 65px;
+        }
+
+        div.footer {
+            width: 100%;
+            height: 190px;
+            background-color: #FF8000;
+            color: white;
+            text-align: center;
+            padding-top: 2px;
+        }
+
+        div.promise {
+            width: 20%;
+            float: left;
+            height: 140px;
+            background-color: #FF8000;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            padding-top: 2px;
+            padding-left: 50px;
+        }
+
+        div.footer2 {
+            width: 45%;
+            height: 35px;
+            float: left;
+            font-size: 25px;
+            background-color: #FF8000;
+            color: white;
+            text-align: center;
+            padding-top: 4px;
+            margin-left: 34px;
+            margin-right: 34px;
+        }
+
+        div.footer3 {
+            width: 45%;
+            height: 35px;
+            float: left;
+            font-size: 28px;
+            text-align: center;
+            padding-top: 4px;
+            margin-left: 34px;
+            margin-right: 34px;
+        }
+
+        div.footer4 {
+            width: 45%;
+            height: 130px;
+            float: left;
+            font-size: 15px;
+            text-align: center;
+            padding-top: 15px;
+            margin-top: 5px;
+            margin-left: 34px;
+            margin-right: 34px;
+            border-width: 1px;
+            border-style : dotted;
+            border-color : #FF8000;
+        }
+
+        div.footer5 {
+            width: 100%;
+            height: 170px;
+            font-size: 15px;
+            background-color: #424242;
+            color: white;
+            text-align: center;
+            padding-top: 15px;
+        }
+     	
+       .menubar {
+          background: #FF8000;
+          display: inline-block;
+           width: 100%;
+      	}
+      	.main { margin: 0; padding: 0; font-size : 19px; }
+      	.main li {
+         padding:0% 3% 0% 3%;
+           float: left;
+           list-style:none;
+           position: relative;
+      	}
+      	.main li:first-child { margin-left: 10%; }
+      	.main li:hover { background: #984807; }
+      	.main a {
+           color: white;
+           display: block;
+           padding: 10px 20px;
+           text-decoration: none;
+      	}
+      	.main ul {
+           background: white;
+           display: none;
+           padding: 0;
+           position: absolute;
+           left: 0;
+           top: 100%;
+           z-index: 2;
+           width: 200px;
+      	}
+      	.main ul li { float: none; margin-left: 10%; }
+      	.main ul a { color: #984807; }
+   	   	.main ul li:hover { background: white; }
+      	.main ul li:hover>a { color: #FF8000; }
+
+        #best {
+            width: 30%;
+            height: 300px;
+            float: left;
+            background-color: #F2F2F2;
+            margin: 0% 1.5% 3% 1.5%;
+        }
+
+        #best2 {
+            width: 35%;
+            height: 350px;
+            float: left;
+            background-color: #F2F2F2;
+            margin: 0% 7% 3% 7%;
+        }
+
+        #best3 {
+            width: 35%;
+            height: 300px;
+            float: left;
+            background-color: #F2F2F2;
+            margin: 0% 7% 3% 7%;
+        }
+
+        #best_korname {
+            font-size: 3;
+            text-align: left;
+            color: black;
+            font-weight: bold;
+        }
+
+        #best_engname {
+            font-size: 3;
+            text-align: left;
+            color: gray;
+        }
+
+        #best_price {
+            font-size: 3;
+            text-align: right;
+            color: gray;
+        }
+
+        #best_price2 {
+            font-size: 3;
+            text-align: right;
+            color: white;
+        }
+
+        #aus_image {
+            width: 100%;
+            height: 250px;
+        }
+
+        #box {
+            width: 100%;
+            height: 720px;
+        }
+
+        #box2 {
+            width: 100%;
+            height: 220px;
+        }
+
+        #box3 {
+            width: 40%;
+            height: 45px;
+        }
+
+        #box4 {
+            width: 30%;
+            height: 30px;
+            padding: 10px 10px 10px 10px;
+        }
+
+        #box5 {
+            width: 100%;
+            height: 230px;
+        }
+
+        #box6 {
+            width: 100%;
+            height: 55px;
+            background-color: #424242;
+            color: white;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+
+        #recommand1 {
+            width: 46.5%;
+            height: 250px;
+            padding: 10px 20px 10px 20px;
+        }
+
+        #recommand2 {
+            width: 30%;
+            height: 250px;
+            padding: 10px 20px 10px 20px;
+        }
+
+        #fo {
+            width: 60px;
+            height: 60px;
+            padding: 10px 70px 5px 70px;
+        }
+        
+        .cycle-slideshow { z-index: 1; }
+
+        .cycle-pager {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .cycle-pager span {
+            font-size: 50px;
+            width: 16px;
+            display: inline-block;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .cycle-pager span.cycle-pager-active { color: #FF8000; }
+        .cycle-pager > * { cursor: pointer; }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="header1">
+        <input type="text" size=30>
+        <input type="submit" value="검색">
+    </div>
+    <a href="투어메이트.html">
+    <div class="header2">
+        <center>
+            <font face="HYHeadLine" size="7">Tourmate</font><br>
+            <font face="함초롬돋움" size="4">믿을 수 있는 여행 친구, 투어메이트</font>
+        </center>
+    </div>
+    </a>
+    <div class="header3">
+        <center>
+            <font size="3">로그인 | 회원가입</font>
+        </center>
+    </div>
+    
+    <!--상단 메뉴바와 하위 메뉴-->
+    <script src="//code.jquery.com/jquery.min.js"></script>
+   <script>
+   $(function(){
+        $(".main li").hover(function(){
+          $('ul:first',this).show();
+        }, function(){
+          $('ul:first',this).hide();
+        });
+   });
+   </script>
+   
+    <div class="menubar">
+        <ul class="main">
+            <li>
+                 <a href="#">여행 정보</a>
+                 <ul>
+                  <li><a href="인기_여행_도시.jsp">인기 여행 도시</a></li>
+                  <li><a href="#">여행 준비</a></li>
+               </ul>
+            </li>
+            
+            <li>
+                <a href="#">커뮤니티</a>
+                <ul>
+                    <li><a href="#">여행 후기</a></li>
+                    <li><a href="#">맛집 추천</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#">티켓/투어</a>
+                <ul>
+                    <li><a href="티켓투어_한국.jsp">한국</a></li>
+                    <li><a href="#">홍콩</a></li>
+                    <li><a href="#">일본</a></li>
+                    <li><a href="#">싱가포르</a></li>
+                    <li><a href="#">대만</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="#">항공</a></li>
+            <li><a href="#">호텔</a></li>
+            <li><a href="#">렌터카</a></li>
+        </ul>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+    <div class="cycle-slideshow" cycle-slideshow data-cycle-loader="wait" data-cycle-timeout=1000>
+        <div class="cycle-pager"></div>
+        <img id="box" src="main/배경사진.png">
+        <img id="box" src="main/배경사진4.jpg">
+        <img id="box" src="main/배경사진3.jpg">
+        <img id="box" src="main/배경사진2.png">
+        <img id="box" src="main/배경사진5.jpg">
+    </div>
+    <br><br><br>
+    <font face="함초롬돋움" size="7"> BEST DEAL </font>
+    <font face="함초롬돋움" size="5"> 추천 여행상품 정보</font>
+    <br><br>
+    <div id="best">
+        <img id="box2" src="main/포시즌스 호텔 서울.jpg">
+        <div id="best_korname"> 포시즌스 호텔 서울 </div>
+        <div id="best_engname"> Four Seasons Hotel Seoul </div>
+        <div id="best_price">
+            하루 <font color="red" size="5"><b>344,250</b></font>원
+        </div>
+    </div>
+    <div id="best">
+        <img id="box2" src="main/힐튼 괌.jpg">
+        <div id="best_korname"> 힐튼 괌 리조트&스파 </div>
+        <div id="best_engname"> Hilton Guam Resort&Spa </div>
+        <div id="best_price">
+            하루 <font color="red" size="5"><b>171,802</b></font>원
+        </div>
+    </div>
+    <div id="best">
+        <img id="box2" src="main/샌프란시스코 다리.jpg">
+        <div id="best_korname"> 인천 (ICN) ⇌ 샌프란시스코 (SFO) </div>
+        <div id="best_price">
+            <img id="box3" src="main/아시아나 로고.png" align="left"><br>
+            최저 <font color="red" size="5"><b>632,200</b></font>원
+        </div>
+    </div>
+    <br>
+    <div id="best">
+        <img id="box2" src="main/다낭.png">
+        <div id="best_korname"> 인천 (ICN) ⇌ 다낭 (DAD) </div>
+        <div id="best_price">
+            <img id="box4" src="main/티웨이 로고.png" align="left"><br>
+            최저 <font color="red" size="5"><b>368,700</b></font>원
+        </div>
+    </div>
+    <div id="best">
+        <img id="box2" src="main/자동차1.png">
+        <div id="best_korname"> Toyota Corolla </div>
+        <div id="best_engname"> [호주]멜버른 </div>
+        <div id="best_price">
+            하루 <font color="red" size="5"><b>36,080</b></font>원
+        </div>
+    </div>
+    <div id="best">
+        <img id="box2" src="main/유니버셜 재팬.jpg">
+        <div id="best_korname"> [일본] 유니버셜 스튜디오 재팬 입장권 </div>
+        <div id="best_engname"> Universal Studios Japan Ticket 1 Day Pass </div>
+        <div id="best_price">
+            ￥7,786 > <font color="red" size="5"><b> 78,200원</b></font>(￥7,786)
+        </div>
+    </div>
+    <br><br>
+    <font face="함초롬돋움" size="7"> HOT DEAL </font>
+    <font face="함초롬돋움" size="5"> 여행상품 특가&할인쿠폰</font>
+    <br><br>
+    <div id="best2">
+        <img id="box5" src="main/폴란드 항공.jpg">
+        <div id="best_korname"> [LOT 폴란드항공] 한국 취항 1주년 특가 판매 </div>
+        <div id="best_price">
+            남은 시간 <font color="red" size="5"><b>10일</b></font>
+        </div>
+        <div id="box6">
+            폴란드, 바르샤바, 오슬로<br>
+            <div id="best_price2">
+                <font size="5"><b> >  724,400 </b></font>
+            </div>
+        </div>
+    </div>
+    <div id="best2">
+        <img id="box5" src="main/마카오.jpg">
+        <div id="best_korname"> [씨트립] 마카오호텔&항공 특가할인 </div>
+        <div id="best_price">
+            남은 시간 <font color="red" size="5"><b>47일</b></font>
+        </div>
+        <div id="box6">
+            마카오<br>
+            <div id="best_price2">
+                206,793 <font size="5"><b> >  113,707 </b></font>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="best3">
+        <img id="box5" src="main/돈키호테.png">
+        <div id="best_korname"> 일본 돈키호테 할인쿠폰 </div>
+    </div>
+    <div id="best3">
+        <img id="box5" src="main/간사이 공항.png">
+        <div id="best_korname"> 간사이 국제공항 (KIX) 면세점 5% 할인쿠폰 </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <font face="함초롬돋움" size="7"> 12월 여행도시 </font>
+    <font face="함초롬돋움" size="5"> 투어메이트가 추천하는 호주 </font>
+    <div id="aus_image">
+        <img id="recommand1" src="main/호주1.jpg">
+        <img id="recommand1" src="main/호주2.png">
+    </div>
+    <br><br>
+    <div id="aus_image">
+        <img id="recommand2" src="main/호주3.jpg">
+        <img id="recommand2" src="main/호주5.jpg">
+        <img id="recommand2" src="main/호주4.jpg">
+    </div>
+    <br><br><br>
+    <div class="footer">
+        <font size="6">여행자분들에게 약속드립니다.</font><br>
+        <div class="promise">
+            <img id="fo" src="main/footer 그림1.png"><br>
+            수익을 위해 여행자를<br>
+            속이며, 잘못된 정보를<br>
+            추천하지 않겠습니다.
+        </div>
+        <div class="promise">
+            <img id="fo" src="main/footer 그림2.png"><br>
+            자유여행자 분들에게<br>
+            꼭 필요한 정보만 엄선하고<br>
+            객관성을 유지하겠습니다.
+        </div>
+        <div class="promise">
+            <img id="fo" src="main/footer 그림3.png"><br>
+            여행자분들의 제안과<br>
+            신고를 흘려버리지 않고<br>
+            서비스에 적극 반영하겠습니다.
+        </div>
+        <div class="promise">
+            <img id="fo" src="main/footer 그림4.png"><br>
+            여행가기 전에 믿고<br>
+            방문할 수 있는 서비스를<br>
+            제공하도록 노력하겠습니다.
+        </div>
+    </div>
+    <br><br>
+    <div class="footer2">고객 센터</div>
+    <div class="footer2">은행 정보</div>
+    <br>
+    <div class="footer3">1688-1234</div>
+    <div class="footer3">예금주 : (주)투어메이트</div>
+    <br>
+    <div class="footer4">
+        <font color="brown" size="4">근무 시간 안내</font><br><br>
+        평일 9:00 ~ 19:00(고객센터)<br>
+        토요일 10:00 ~ 16:00(고객센터)<br>
+        점심시간 12:00 ~ 13:00<br>
+        일요일 및 공휴일은 휴무입니다.<br>
+    </div>
+    <div class="footer4">
+        <br>
+        국민 : 12345-123456<br>
+        신한 : 123-456-789012<br>
+        하나 : 123-123456-78901<br>
+        우리 : 1234-567-890123<br>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="footer5">
+        상호명 : 투어메이트 | 대표 : 이주영, 고노윤 | 대표전화 : 1688-1234<br>
+        주소 : 서울특별시 중구 필동로 1길 123 | <br>
+        사업자 등록 번호 : 123-45-67890 |<br>
+        통신판매업신고 : 제2017-1234동-5678호<br>
+        이메일 : tourmate@naver.com<br>
+        FAX : 123-4567-8901<br><br>
+        COPYRIGHT(C) ALL RIGHTS RESERVED.<br>
+    </div>
+</body>
+</html>

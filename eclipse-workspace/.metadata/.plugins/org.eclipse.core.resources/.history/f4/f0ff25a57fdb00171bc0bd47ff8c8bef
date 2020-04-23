@@ -1,0 +1,139 @@
+<%@ page language="java" 
+    contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%
+    request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>투어메이트</title>
+    <style>
+        div { font-family: "함초롬돋움"; }
+        
+      .mainbox { padding-left:15%; }
+      .imgbox {
+         height: 370px;
+         width: 450px;
+         float:left;
+         margin: 0% 0% 5% 15%;
+      }
+      
+      .whitebox {
+         background: white;
+         border:1px solid #ddd;
+         height: 370px;
+         width: 380px;
+         float:left;
+         margin: 0% 0% 5% 5%;
+      }
+      
+      #bgimg { width: 100%; height: 100%;}
+      
+      .input { margin-left: 4%; padding-bottom: 5px; }
+        
+        .input:first-child{
+           font-size: 3;
+            color: gray;
+            text-align: right;
+            margin-right:10px;
+        }
+      
+      .text {
+         border: 1.5px solid #ddd;
+         font-size: 15px;
+         height: 30px;
+         width: 95%;
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+      
+      .bottom {
+         margin-top:20px;
+         background: #eee;
+         height: 115px;
+      }
+      
+      button.reset {
+         margin-top: 4%;
+         margin-left: 32%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #808781;
+         color: white;
+      }
+      
+      input.submit{
+         margin-top: 4%;
+         margin-left: 2%;
+         width:30%;
+         height:40%;
+         border-color:transparent;
+         font-weight: 600;
+         font-size: 17px;
+         background: #60C26C;
+         color: white;         
+      }
+   </style>
+</head>
+<body>
+      <!-- 제목+메뉴바를 포함한 Header.jsp 파일을 include -->
+    <jsp:include page="Header.jsp" flush="false"/>
+
+   <div class="mainbox">
+   <p><h2 class="hotel_title">포시즌스 호텔 서울 <small>Four Seasons Hotel Seoul</small></h2></p>
+   </div>
+   
+   <!-- 달력 만들기 -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+   <script>
+     $( function() {
+       $("#datepicker1, #datepicker2").datepicker({
+          dateFormat: 'yy년 mm월 dd일'
+       });
+     } );
+     </script>
+   
+   <div class="imgbox">
+      <img id="bgimg" src="main/포시즌스 호텔 서울.jpg">
+   </div>
+   
+   <div class="whitebox">
+      <div class="input">
+      <br>
+      <b><font size=3 color="black">가격 (1박 기준)</font></b><br>
+       하루 <font color="red" size="5"><b>344,250</b></font>원
+      </div>
+
+      <div class="input">
+      <br>
+      <b><font size=3>사용예정일 선택</font></b>
+      <input class="text" type="text" id="datepicker2" name="use_date" placeholder="날짜 선택" >
+      </div>
+      
+      <div class="input">
+      <b><font size=3>인원수</font></b>
+      <select class="text" name="people">
+         <option value="1">1명</option>
+         <option value="2">2명</option>
+         <option value="3">3명</option>
+         <option value="4">4명</option>
+         <option value="5">5명</option>
+      </select>
+      </div>
+      <div class="bottom">
+      <button type="reset" class="reset">초기화</button>
+      <input type="button" value="결제" class="submit" onclick="location.href('ok.jsp')">
+      </div>
+   </div>
+    
+     <!-- 회사 정보와 약속을 포함한 Footer.jsp 파일을 include -->
+   <jsp:include page="Footer.jsp" flush="false"/>
+</body>
+</html>
